@@ -1,0 +1,46 @@
+<!-- <form #userform="ngForm" (ngSubmit)="userform.valid&&onSubmit()">
+
+    <input class="form-control me-2" type="text" required #name="ngModel" [(ngModel)]="data.name" name="name" id="name" placeholder="Name">
+    <small *ngIf="userform.submitted&&name.errors?.['required']" >Field is required</small>
+
+    <input type="email" required #email="ngModel" [(ngModel)]="data.email" name="email" id="email" placeholder="Email">
+    <small *ngIf="userform.submitted&&email.errors?.['required']" >Field is required</small>
+
+    <input type="password" required #password="ngModel" [(ngModel)]="data.password" name="password" id="password" placeholder="Password">
+    <small *ngIf="userform.submitted&&password.errors?.['required']" >Field is required</small>
+
+    <input type="submit" value="Save"/> 
+
+</form> -->
+
+<div class="row">
+    <div class="col">
+    <div class="col-sm-6">
+<form class="row g-3"  #userform="ngForm" (ngSubmit)="userform.valid&&onSubmit()" >
+    
+    <div class="mb-3">
+      <label class="visually-hidden" for="name">Name</label>
+      <input  class="form-control" type="text" required #name="ngModel" [(ngModel)]="data.name" name="name" id="name" placeholder="Name">
+      <small style="color: #dc3545;"  *ngIf="userform.submitted&&name.errors?.['required']" >Field is required</small>
+    </div>
+  
+    <div class="mb-3">
+      <label class="visually-hidden" for="email">Email</label>
+      <input class="form-control" type="email" required #email="ngModel" [(ngModel)]="data.email" name="email" id="email" placeholder="Email">
+      <small style="color: #dc3545;" *ngIf="userform.submitted&&email.errors?.['required']" >Field is required</small>
+    </div>
+  
+    <div class="mb-3">
+        <label class="visually-hidden" for="email">Email</label>
+        <input class="form-control" type="password" required #password="ngModel" [(ngModel)]="data.password" name="password" id="password" placeholder="Password">
+        <small style="color: #dc3545;" *ngIf="userform.submitted&&password.errors?.['required']" >Field is required</small>
+      
+    </div>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
