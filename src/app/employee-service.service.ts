@@ -19,6 +19,9 @@ export class EmployeeServiceService {
   updateUser(data:any,id:any){
     return this.http.patch<any>(`http://localhost:8800/api/user/${id}`,data);
   }
+  deleteUser(id:any){
+    return this.http.delete<any>(`http://localhost:8800/api/user/${id}`);
+  }
 
   //http://localhost:8800/api/user/63cbe921b035f3be1de91377
 }

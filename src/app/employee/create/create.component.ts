@@ -30,6 +30,9 @@ export class CreateComponent implements OnInit {
       console.log('Save')
     }
   }
+  backToHome(){
+    this.router.navigate([''])
+  }
 
   onSubmit(){
     if(this.id){

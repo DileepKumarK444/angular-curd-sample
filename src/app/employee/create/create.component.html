@@ -32,13 +32,14 @@
   
     <div class="mb-3">
         <label class="visually-hidden" for="email">Email</label>
-        <input class="form-control" type="password" required #password="ngModel" [(ngModel)]="data.password" name="password" id="password" placeholder="Password">
-        <small style="color: #dc3545;" *ngIf="userform.submitted&&password.errors?.['required']" >Field is required</small>
+        <input class="form-control" type="password"  #password="ngModel" [(ngModel)]="data.password" name="password" id="password" placeholder="Password">
+        <!-- <small style="color: #dc3545;" *ngIf="userform.submitted&&password.errors?.['required']" >Field is required</small> -->
       
     </div>
   
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+      <button type="button" (click)="backToHome()" class="btn btn-secondary">Cancel</button>
     </div>
 </form>
 </div>

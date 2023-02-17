@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { EmployeeServiceService } from '../employee-service.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private empService:EmployeeServiceService,private router:Router) { }
+  constructor(private empService:EmployeeServiceService,private router:Router,private toastr: ToastrService) { }
   userData:any=[];
   ngOnInit(){
     
@@ -25,5 +26,20 @@ export class EmployeeComponent implements OnInit {
 
   editUser(id:any){
     this.router.navigate([`edit/${id}`]);
+  }
+
+  deleteUser(id:any){
+    this.empService.deleteUser(id).subscribe((res)=>{
+      if(res?._id==id)
+      {
+        this.toastr.success('Record deleted successfully','Success')
+        this.ngOnInit();
+      }
+      else{
+
+        this.toastr.error('Something went wrong','Error');
+      }
+      
+    })
   }
 }
